@@ -1,0 +1,121 @@
+@use './colors.scss';
+@use './fonts.scss';
+@use './loader.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.search__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 370px;
+  height: 60px;
+  margin: 50px auto 0;
+  padding: 18px 17px 18px 18px;
+  border: 1px solid colors.$gray-light-03;
+  border-radius: 5px;
+  font-family: fonts.$main-font;
+}
+
+.search__legend {
+  display: none;
+  position: absolute;
+  width: 57px;
+  height: 23px;
+  top: -9px;
+  left: 11px;
+  background-color: colors.$white;
+  font-size: fonts.$font-size-small;
+  font-weight: fonts.$font-weight-regular;
+  color: colors.$gray-01;
+  text-align: center;
+}
+
+.search__legend--visible {
+  display: block;
+}
+
+.search__input {
+  border: none;
+  color: colors.$gray-dark;
+
+  &::placeholder {
+    font-size: fonts.$font-size-medium;
+    font-weight: fonts.$font-weight-regular;
+    color: colors.$gray-02;
+  }
+
+  &:focus-visible {
+    outline: 0;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
+.search__list {
+  display: none;
+  position: relative;
+  margin: 10px auto 0;
+  padding: 20px 20px 24px 20px;
+  width: 370px;
+  border-radius: 5px;
+  background-color: colors.$gray-light-01;
+  font-size: fonts.$font-size-medium;
+  font-family: fonts.$main-font;
+  color: colors.$black;
+  list-style: none;
+  
+  &::before {
+    position: absolute;
+    content: '';
+    background-color: colors.$gray-light-01;
+    width: 40px;
+    height: 40px;
+    z-index: -1;
+    rotate: 45deg;
+    top: -1px;
+    left: 9px;
+  }
+}
+
+.search__list--visible {
+  display: block;
+}
+
+.search__list-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &:not(:first-of-type) {
+    margin-top: 32px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:not(:last-of-type)::after {
+    position: absolute;
+    content: '';
+    background-color: colors.$gray-light-02;
+    width: 330px;
+    height: 1px;
+    top: 30px;
+  }
+}
+
+.search__product {
+  font-weight: fonts.$font-weight-regular;
+}
+
+.search__price {
+  font-weight: fonts.$font-weight-medium;
+}
