@@ -1,0 +1,117 @@
+@use './colors.scss';
+@use './fonts.scss';
+@use './mixins.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.terminal__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 726px;
+  min-height: 374px;
+  margin: 20px auto 0;
+  padding: 40px 20px 40px;
+  border-radius: 5px;
+  background-color: colors.$black;
+  
+  @include mixins.tablet {
+    width: 80%;
+  }
+
+  @include mixins.mobile {
+    width: 99%;
+  }
+}
+
+.terminal__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: colors.$gray-dark;
+}
+
+.terminal__dots-container {
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.terminal__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal__dot--red {
+  @extend .terminal__dot;
+  background-color: colors.$red;
+}
+
+.terminal__dot--yellow {
+  @extend .terminal__dot;
+  background-color: colors.$yellow;
+}
+
+.terminal__dot--green {
+  @extend .terminal__dot;
+  background-color: colors.$green;
+}
+
+.terminal__header {
+  margin: 0 auto;
+  font-family: fonts.$font-inter;
+  font-size: fonts.$font-size-header;
+  font-weight: fonts.$font-weight-bold;
+  color: colors.$gray-light-02;
+}
+
+.terminal {
+  font-family: fonts.$font-roboto;
+  font-weight: fonts.$font-weight-medium;
+  font-size: fonts.$font-size-terminal;
+  color: colors.$white;
+}
+
+.terminal__line {
+  margin-bottom: 14px;
+}
+
+.terminal__input {
+  width: 100%;
+  height: 40px;
+  padding-left: 14px;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  background-color: colors.$gray-dark;
+  color: colors.$gray-light-01;
+  font-family: fonts.$font-roboto;
+}
+
+.terminal__suggestions {
+  position: absolute;
+  display: none;
+  margin-top: 10px;
+  font-family: fonts.$font-roboto;
+  font-weight: fonts.$font-weight-medium;
+  font-size: fonts.$font-size-header;
+  color: colors.$white;
+}
+
+.terminal__suggestions--visible {
+  display: block
+}

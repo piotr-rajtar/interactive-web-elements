@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div class="terminal__container">
+      <div class="terminal__bar">
+        <div class="terminal__dots-container">
+          <div class="terminal__dot--red"></div>
+          <div class="terminal__dot--yellow"></div>
+          <div class="terminal__dot--green"></div>
+        </div>
+        <h1 class="terminal__header">webjaksklep</h1>
+      </div>
+      <div id="terminal" class="terminal"></div>
+      <div>
+        <input id="user-input" type="text" class="terminal__input" />
+        <p id="suggestions" class="terminal__suggestions"></p>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
