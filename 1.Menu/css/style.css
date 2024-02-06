@@ -1,0 +1,143 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin: 0 auto;
+  padding: 18px 12px 18px 30px;
+  width: 1170px;
+  height: 60px;
+  background-color: #f4f4f4;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+.menu__container::after {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  content: "";
+  background: linear-gradient(0.25turn, #ff0000, #fa00ff, #0400d2, #00b2ff, #00ff57, #dbf72c, #ff8a00, #ff0000);
+  left: 0;
+  bottom: 0;
+}
+
+.menu__icon {
+  margin-left: 10px;
+}
+
+.menu__item-link {
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu__item--last {
+  margin-left: auto;
+}
+
+.menu__item-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 36px;
+  border-radius: 5px;
+  padding: 8px 20px;
+  background-color: #FF4242;
+}
+.menu__item-button:hover {
+  background-color: #ff5c5c;
+}
+
+.menu__item-button__link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu__submenu--visible {
+  display: flex;
+}
+
+.menu__submenu--hidden {
+  display: none;
+}
+
+.menu__submenu-header {
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000000;
+}
+
+.menu__makeup-submenu {
+  position: absolute;
+  gap: 116px;
+  width: 1170px;
+  padding: 30px;
+  left: 0;
+  background-color: #f4f4f4;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  bottom: -90px;
+}
+.menu__makeup-submenu:before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: -1px;
+  rotate: 45deg;
+  z-index: -1;
+  background-color: #f4f4f4;
+}
+.menu__makeup-submenu:before {
+  left: 45px;
+}
+
+.menu__face-submenu {
+  position: absolute;
+  gap: 116px;
+  width: 1170px;
+  padding: 30px;
+  left: 0;
+  background-color: #f4f4f4;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  bottom: -205px;
+}
+.menu__face-submenu:before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: -1px;
+  rotate: 45deg;
+  z-index: -1;
+  background-color: #f4f4f4;
+}
+.menu__face-submenu:before {
+  left: 180px;
+}
+
+.menu__face-submenu__list {
+  list-style: none;
+}
+
+.menu__face-submenu__list-item {
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000000;
+}
+
+/*# sourceMappingURL=style.css.map */

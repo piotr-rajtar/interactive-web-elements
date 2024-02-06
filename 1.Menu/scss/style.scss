@@ -1,0 +1,125 @@
+@use './colors.scss';
+@use './fonts.scss';
+@use './mixins.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin: 0 auto;
+  padding: 18px 12px 18px 30px;
+  width: 1170px;
+  height: 60px;
+  background-color: colors.$gray;
+  list-style: none;
+  font-family: fonts.$menu-font;
+  
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    content: '';
+    background: linear-gradient(
+      0.25turn, 
+      colors.$red, 
+      colors.$pink, 
+      colors.$blue-dark, 
+      colors.$blue-light, 
+      colors.$green, 
+      colors.$yellow, 
+      colors.$orange, 
+      colors.$red
+    );
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.menu__icon {
+  margin-left: 10px;
+}
+
+.menu__item-link {
+  text-decoration: none;
+  color: colors.$gray-dark;
+  font-size: fonts.$font-large;
+  font-weight: fonts.$medium;
+}
+
+.menu__item--last {
+  margin-left: auto;
+}
+
+.menu__item-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 36px;
+  border-radius: 5px;
+  padding: 8px 20px;
+  background-color: colors.$red-light;
+  
+  &:hover {
+    background-color: lighten($color: colors.$red-light, $amount: 5);
+  }
+}
+
+.menu__item-button__link {
+  text-decoration: none;
+  color: colors.$white;
+  font-size: fonts.$font-small;
+  font-weight: fonts.$semi-bold;
+}
+
+.menu__submenu--visible {
+  display: flex;
+}
+
+.menu__submenu--hidden {
+  display: none;
+}
+
+.menu__submenu-header {
+  font-size: fonts.$font-medium;
+  font-weight: fonts.$medium;
+  text-decoration: none;
+  color: colors.$black;
+}
+
+.menu__makeup-submenu {
+  @include mixins.submenu;
+  bottom: -90px;
+
+  &:before {
+    left: 45px;
+  }
+}
+
+.menu__face-submenu {
+  @include mixins.submenu;
+  bottom: -205px;
+
+  &:before {
+    left: 180px;
+  }
+}
+
+.menu__face-submenu__list {
+  list-style: none;
+}
+
+.menu__face-submenu__list-item {
+  font-size: fonts.$font-extra-small;
+  font-weight: fonts.$regular;
+  text-decoration: none;
+  color: colors.$black;
+}

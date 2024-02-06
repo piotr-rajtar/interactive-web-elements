@@ -1,0 +1,24 @@
+@use './colors.scss';
+@use './fonts.scss';
+
+@mixin submenu {
+  position: absolute;
+  gap: 116px;
+  width: 1170px;
+  padding: 30px;
+  left: 0;
+  background-color: colors.$gray;
+  list-style: none;
+  font-family: fonts.$submenu-font;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    top: -1px;
+    rotate: 45deg;
+    z-index: -1;
+    background-color: colors.$gray;
+  }
+}
